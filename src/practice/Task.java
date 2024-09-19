@@ -1,7 +1,6 @@
 package practice;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Task implements Comparable<Task> { //日付順で並べ替えを行うため、Comparableを実装
 	private LocalDate date; //タスクの日付
@@ -18,14 +17,13 @@ public class Task implements Comparable<Task> { //日付順で並べ替えを行
 	}
 
 	public LocalDate getDate() {
-		return date;
+		return this.date;
 	}
 
-	//日付を「yyyy年MM月dd日」フォーマットで表示し、タスクの内容も含め文字列で表示するようオーバーライド
+	//日付と、タスクの内容も含め文字列で表示するようオーバーライド
 	@Override
 	public String toString() {
-		DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
-		return date.format(f) + "" + content;
+		return this.date + ":" + content;
 	}
 
 	//タスクの日付で並べ替え
