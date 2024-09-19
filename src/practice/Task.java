@@ -23,7 +23,7 @@ public class Task implements Comparable<Task> { //日付順で並べ替えを行
 	//日付と、タスクの内容も含め文字列で表示するようオーバーライド
 	@Override
 	public String toString() {
-		return this.date + ":" + content;
+		return this.date + ":" + this.content;
 	}
 
 	//タスクの日付で並べ替え
